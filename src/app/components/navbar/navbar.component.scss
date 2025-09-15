@@ -1,0 +1,140 @@
+.boho-navbar {
+  width: 100%;
+  background-color: #3e2f2f;
+  color: #fdf6f0;
+   padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .logo {
+     height: 55px; 
+      border-radius: 50%;
+      
+    }
+
+    .brand-name {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem; // was 1.8rem
+  letter-spacing: 1.2px;
+      color: #fdf6f0;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fdf6f0;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .nav-center {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+
+    li a {
+      font-family: 'Sora', sans-serif;
+      text-decoration: none;
+      color: #fdf6f0;
+      transition: all 0.3s ease;
+      font-size: 1.1rem; // or try 1.2rem for more impact
+  font-weight: 600;
+
+      &:hover {
+        color: #d4a373;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 1rem;
+      font-family: 'Sora', sans-serif;
+
+    .btn {
+      background-color: #d4a373;
+      color: #2c1f1f;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 1.1rem;
+  font-weight: 700;
+      font-family: 'Josefin Sans', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+       text-decoration: none; // removes underline
+
+      &:hover {
+        background-color: #fdf6f0;
+        color: #3e2f2f;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+
+    .nav-center,
+    .nav-right {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    #menu-toggle:checked ~ .nav-row .nav-center,
+    #menu-toggle:checked ~ .nav-row .nav-right {
+      display: flex;
+    }
+  }
+}
+
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+
+  i {
+    width: 24px;
+    height: 24px;
+    stroke: #d4a373;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    line-height: 1;
+    min-width: 18px;
+    text-align: center;
+  }
+}

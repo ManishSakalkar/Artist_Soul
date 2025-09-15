@@ -1,0 +1,30 @@
+<nav class="boho-navbar">
+  <input type="checkbox" id="menu-toggle" />
+
+  <div class="nav-row">
+    <div class="nav-left">
+      <img src="assets/Artistic_Soul.png" alt="Artistic Soul Logo" class="logo" />
+      <span class="brand-name">Artistic Soul</span>
+    </div>
+
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <ul class="nav-center">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/gallery">Gallery</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/profiles">Profiles</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a routerLink="/login" class="btn login-btn">Login</a>
+      <a routerLink="/cart" class="btn cart-btn">
+        <div class="cart-icon-wrapper">
+          <i data-feather="shopping-cart"></i>
+          <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</nav>
