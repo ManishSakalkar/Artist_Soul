@@ -1,0 +1,9 @@
+<div class="carousel-wrapper">
+  <h2 class="carousel-title">Our Featured Art</h2>
+  <div class="carousel">
+    <div class="carousel-item" *ngFor="let art of artStyles">
+      <img [src]="art.image" [alt]="art.title" />
+      <h3>{{ art.title }}</h3>
+    </div>
+  </div>
+</div>

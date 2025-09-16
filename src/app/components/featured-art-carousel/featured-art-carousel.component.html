@@ -1,0 +1,25 @@
+<div class="carousel-container">
+  <div class="carousel-slide" *ngFor="let art of featuredArt; let i = index" [class.active]="i === activeSlide">
+    <div class="slide-content">
+      <div class="image-wrapper">
+        <img [src]="art.image" [alt]="art.title" />
+      </div>
+      <div class="text-wrapper">
+        <h1>
+      {{ art.title }}<br />
+      <span class="cursive">Soulful Spaces</span>
+    </h1>
+        <p>{{ art.description }}</p>
+        <div class="button-group">
+     <button class="btn dark-btn explore-btn">Shop Collection</button>
+      <button class="btn light-btn learn-btn">Learn More</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-controls">
+    <button (click)="prevSlide()">‹</button>
+    <button (click)="nextSlide()">›</button>
+  </div>
+</div>
