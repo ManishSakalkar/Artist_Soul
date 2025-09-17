@@ -10,6 +10,8 @@ import { FeaturedArtComponent } from './components/featured-art/featured-art.com
 import { ShopByCategoryComponent } from './components/shop-by-category/shop-by-category.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { MostLovedCreationsComponent } from './components/most-loved-creations/most-loved-creations.component';
+import { GetInTouchComponent } from './components/get-in-touch/get-in-touch.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MostLovedCreationsComponent } from './components/most-loved-creations/m
     FeaturedArtComponent,
     ShopByCategoryComponent,
     TestimonialsComponent,
-    MostLovedCreationsComponent
+    MostLovedCreationsComponent,
+    GetInTouchComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

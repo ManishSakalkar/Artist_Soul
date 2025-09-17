@@ -1,0 +1,68 @@
+<div class="get-in-touch-container">
+  <div class="background-overlay"></div>
+
+  <section class="contact-section">
+    <div class="contact-card-3d" [class.flipped]="isFlipped">
+      <div class="contact-card-front">
+        <h2>Get In Touch</h2>
+        <p class="subtitle">
+          Have questions about a piece? Interested in custom work? I'd love to hear from you and help you find the perfect artwork.
+        </p>
+
+        <form class="contact-form">
+           <div class="form-group">
+            <input #nameInput type="text" id="name" name="name" placeholder="Your Name" required />
+            <span *ngIf="nameError" class="error-message">{{ nameError }}</span>
+          </div>
+          <div class="form-group">
+            <input #emailInput type="email" id="email" name="email" placeholder="Your Email" required />
+            <span *ngIf="emailError" class="error-message">{{ emailError }}</span>
+          </div>
+          <div class="form-group">
+            <textarea #messageInput id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <span *ngIf="messageError" class="error-message">{{ messageError }}</span>
+          </div>
+          <button type="button" class="send-message-btn" (click)="onSendMessage(nameInput.value, emailInput.value, messageInput.value)">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-card-back">
+        <h3>Let's Connect</h3>
+        <div class="contact-details">
+          <p><strong>Email:</strong> luna@artisansoul.com</p>
+          <p><strong>Phone:</strong> (555) 123-4567</p>
+          <p><strong>Location:</strong> Santa Fe, New Mexico</p>
+          <p><strong>Instagram:</strong> @artisansoul_studio</p>
+        </div>
+
+        <div class="commission-info">
+          <h3>Commission Work</h3>
+          <p>
+            Interested in a custom piece? I love working with clients to create artwork that perfectly fits their space and vision. Contact me to discuss your ideas and pricing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="artist-section">
+    <h2>Meet Our Team</h2>
+    <div class="artist-grid">
+      <div class="artist-card">
+        <img src="assets/artists/artist1.jpg" alt="Artist 1" class="artist-photo" />
+        <h3>Luna Fae</h3>
+        <p>Founder & Liipan Art Specialist</p>
+      </div>
+      <div class="artist-card">
+        <img src="assets/artists/artist2.jpg" alt="Artist 2" class="artist-photo" />
+        <h3>Jasper Reed</h3>
+        <p>Sketching & Illustration</p>
+      </div>
+      <div class="artist-card">
+        <img src="assets/artists/artist3.jpg" alt="Artist 3" class="artist-photo" />
+        <h3>Celeste Sol</h3>
+        <p>Canvas & Mixed Media</p>
+      </div>
+    </div>
+  </section>
+</div>
