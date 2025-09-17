@@ -1,0 +1,61 @@
+.most-loved-creations {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #facfbf;
+  background: linear-gradient(to left, #fdf6f0, #f3bd8d);
+border: 2px solid #d4a373; // boho accent color
+  border-radius: 16px; // smooth rounded corners
+//   background-color: #fff; /* A very light, inviting background */
+}
+
+.art-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.art-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid #e0d8c7; /* Subtle border */
+}
+
+.art-card:hover {
+  transform: translateY(-5px);
+}
+
+.art-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.art-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d4a373; /* Boho accent color */
+  margin: 0.5rem 0;
+}
+
+.add-to-cart-button {
+  background-color: #5c4b51;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+  background-color: #796871;
+}

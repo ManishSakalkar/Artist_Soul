@@ -1,17 +1,46 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Sora:wght@300;400;600;700&display=swap');
+
+$boho-dark-brown: #3e2f2f;
+$boho-tan: #f7dfc7;
+$boho-terracotta: #d4a373;
+$boho-light-cream: #fcdcc0;
+
 .carousel-container {
- position: relative;
-  width: 100%; // full viewport width
+  position: relative;
+  width: 100%;
   margin: 0;
-  padding: 0; // remove internal spacing
-  background: #fcdcc0;
+  padding: 0;
+  
+  background-image: url('../../../assets/art/boho-background-pattern.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: $boho-light-cream;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($boho-light-cream, 0.7);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+  }
+
   border-radius: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  min-height: 60vh;
 }
 
 .carousel-slide {
+  position: relative;
+  z-index: 2;
   display: none;
-  padding: 2rem;
+  padding: 4rem 2rem;
+  animation: fadeIn 1s ease-in-out;
 
   &.active {
     display: block;
@@ -21,30 +50,50 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 2rem 2rem;
-    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 4rem;
+    gap: 4rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      gap: 2rem;
     }
 
     .image-wrapper {
       flex: 1;
       position: relative;
-      border-top: 6px solid #d4a373;
-      border-left: 6px solid #d4a373;
-      border-radius: 12px;
-      overflow: hidden;
-
+      padding: 1rem;
+      border-radius: 20px;
+      background-color: #fff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: calc(100% + 30px);
+        height: calc(100% + 30px);
+        border-top: 5px solid $boho-terracotta;
+        border-right: 5px solid $boho-terracotta;
+        border-radius: 25px;
+        transform: rotate(-3deg);
+        z-index: -1;
+      }
+      
       img {
         width: 100%;
         height: auto;
-        transition: transform 0.3s ease;
         border-radius: 12px;
-
-        &:hover {
-          transform: scale(1.05);
-        }
+        transition: transform 0.5s ease;
+      }
+      
+      &:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
       }
     }
 
@@ -52,102 +101,148 @@
       flex: 1;
       text-align: left;
       max-width: 50%;
+      padding: 2rem;
+      border: 1px dashed $boho-terracotta;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      
+      @media (max-width: 992px) {
+          text-align: center;
+          padding: 1rem;
+          max-width: 100%;
+      }
 
       h1 {
-        // font-family: 'Pacifico';
-        font-size: 3.5rem;
-        color: #3e2f2f;
+        font-family: 'Sora', sans-serif;
+        font-size: 3.8rem;
+        color: $boho-dark-brown;
         margin-bottom: 1rem;
-        letter-spacing: 1px;
-         word-break: break-word;
-  overflow-wrap: break-word;
-      font-weight: 700;
-      line-height: 1.2;
+        letter-spacing: 2px;
+        font-weight: 700;
+        line-height: 1.2;
 
-      .cursive {
-        font-family: 'Pacifico', cursive;
-        font-size: 3.2rem;
-        color: #d4a373;
-      }
+        .cursive {
+          font-family: 'Pacifico', cursive;
+          font-size: 3.5rem;
+          color: $boho-terracotta;
+        }
+
+        /* Adjust font size for smaller screens */
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
+            .cursive {
+              font-size: 2.2rem;
+            }
+        }
       }
 
       p {
         font-family: 'Sora', sans-serif;
-        font-size: 1.5rem;
-        color: #5c3d2e;
-        margin-bottom: 2rem;
-        line-height: 1.6;
+        font-size: 1.6rem;
+        color: $boho-dark-brown;
+        margin-bottom: 2.5rem;
+        line-height: 1.7;
+
+        /* Adjust font size for smaller screens */
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
       }
 
-      .explore-btn {
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-       background-color: #d4a373;
-        color: #3e2f2f;
-        border: none;
-        padding: 0.8rem 1.6rem; // larger button
-        font-size: 1.1rem; // increased from 1rem
-        border-radius: 24px;
+      .button-group {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        
+        @media (max-width: 992px) {
+            justify-content: center;
+        }
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        border-radius: 50px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         font-weight: 600;
         font-family: 'Sora', sans-serif;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: transform 0.3s ease, background-color 0.3s ease;
 
         &:hover {
-             transform: scale(1.05);
-          background-color: #f3bd8d;
+          transform: translateY(-5px);
+        }
+      }
+
+      .explore-btn {
+        background-color: $boho-terracotta;
+        color: white;
+        border: none;
+        &:hover {
+          background-color: darken($boho-terracotta, 10%);
         }
       }
 
       .learn-btn {
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-       background-color: #f7dfc7;
-        color: #3e2f2f;
+        background-color: $boho-tan;
+        color: $boho-dark-brown;
         border: none;
-        padding: 0.8rem 1.6rem; // larger button
-        font-size: 1.1rem; // increased from 1rem
-        border-radius: 24px;
-        font-weight: 600;
-        font-family: 'Sora', sans-serif;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
         &:hover {
-             transform: scale(1.05);
-          background-color: #f3bd8d;
+          background-color: darken($boho-tan, 10%);
         }
       }
     }
-
-.button-group {
-  display: flex;
-  gap: 1rem; // consistent spacing between buttons
-  flex-wrap: wrap; // optional: allows wrapping on small screens
-}
-
-    
   }
 }
 
 .carousel-controls {
   position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 2rem;
+  right: 2rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  z-index: 3;
+
+  @media (max-width: 768px) {
+      bottom: 1rem;
+      right: 50%;
+      transform: translateX(50%);
+  }
 
   button {
-    background-color: #d4a373;
+    background-color: rgba($boho-terracotta, 0.8);
     border: none;
-    color: #3e2f2f;
-    font-size: 1.5rem;
+    color: white;
+    font-size: 2rem;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
     &:hover {
-      background-color: #f3bd8d;
+        background-color: $boho-terracotta;
+        transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
   }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -12,10 +12,13 @@ import * as feather from 'feather-icons';
 
 
 export class NavbarComponent implements AfterViewInit{
-   cartCount = 3;
-ngAfterViewInit() {
-  feather.replace();
-}
+ // This value will be updated dynamically in a real application,
+  // for example, via a service or state management.
+  cartCount = 3; 
+
+  ngAfterViewInit() {
+    feather.replace();
+  }
 
 
 }

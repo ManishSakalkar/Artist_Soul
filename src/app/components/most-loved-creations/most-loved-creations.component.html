@@ -1,0 +1,13 @@
+<section class="most-loved-creations">
+  <h2>Most Loved Creations</h2>
+  <div class="art-card-grid">
+    <div class="art-card" *ngFor="let creation of mostLovedCreations">
+      <img [src]="creation.image" [alt]="creation.title" class="art-image">
+      <div class="card-content">
+        <h3>{{ creation.title }}</h3>
+        <p class="art-price">{{ creation.price | currency:'USD':'symbol' }}</p>
+        <button class="add-to-cart-button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>

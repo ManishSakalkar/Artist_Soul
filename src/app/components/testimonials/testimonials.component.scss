@@ -1,0 +1,46 @@
+.testimonials-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #fcfbf8; /* Very light, soft background */
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-style: italic;
+  position: relative;
+  border-left: 5px solid #d4a373; /* Boho accent color */
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  color: #6a6a6a;
+}
+
+.customer-info {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.customer-name {
+  color: #5c4b51;
+}
+
+.customer-location {
+  color: #888;
+  font-size: 0.9rem;
+  font-weight: normal;
+}

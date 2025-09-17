@@ -1,0 +1,12 @@
+<section class="testimonials-section">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonials-container">
+    <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+      <p class="testimonial-text">{{ testimonial.quote }}</p>
+      <div class="customer-info">
+        <span class="customer-name">- {{ testimonial.name }}</span>
+        <span class="customer-location">{{ testimonial.location }}</span>
+      </div>
+    </div>
+  </div>
+</section>

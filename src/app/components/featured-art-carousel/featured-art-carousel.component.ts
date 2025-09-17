@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./featured-art-carousel.component.scss']
 })
 export class FeaturedArtCarouselComponent {
-activeSlide = 0;
+  activeSlide = 0;
 
   featuredArt = [
     {

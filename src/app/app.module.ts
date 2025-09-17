@@ -7,6 +7,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FeaturedArtCarouselComponent } from './components/featured-art-carousel/featured-art-carousel.component';
 import { FeaturedArtComponent } from './components/featured-art/featured-art.component';
+import { ShopByCategoryComponent } from './components/shop-by-category/shop-by-category.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { MostLovedCreationsComponent } from './components/most-loved-creations/most-loved-creations.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { FeaturedArtComponent } from './components/featured-art/featured-art.com
     HomeComponent,
     NavbarComponent,
     FeaturedArtCarouselComponent,
-    FeaturedArtComponent
+    FeaturedArtComponent,
+    ShopByCategoryComponent,
+    TestimonialsComponent,
+    MostLovedCreationsComponent
   ],
   imports: [
     BrowserModule,
