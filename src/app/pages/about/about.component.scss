@@ -1,0 +1,190 @@
+/* Google Fonts */
+@import url('https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DSora:wght%40400%3B600%3B700%26family%3DPacifico%26display%3Dswap');
+@import url('https://www.google.com/search?q=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Color Variables 
+:host {
+--boho-dark-brown: #3e2f2f;
+--boho-terracotta: #d4a373;
+--boho-light-cream: #fdf6f0;
+--boho-accent-green: #6d8b6f;
+display: block;
+background-color: var(--boho-light-cream);
+font-family: 'Sora', sans-serif;
+padding-top: 6rem;  Space for the fixed header 
+} */
+
+/* General Layout */
+.about-container {
+position: relative;
+min-height: 100vh;
+padding: 0 2rem 4rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.background-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('https://www.google.com/search?q=https://placehold.co/1920x1080/d2b48c/3e2f2f%3Ftext%3DAbout%2BUs%2BBackground');
+background-size: cover;
+background-position: center;
+opacity: 0.1;
+z-index: 1;
+}
+
+.about-section {
+position: relative;
+z-index: 2;
+width: 100%;
+max-width: 1200px;
+text-align: center;
+}
+
+/* Header */
+.about-header {
+margin: 4rem 0 3rem;
+animation: fade-in 1.5s ease-in-out;
+}
+
+.section-title {
+font-family: 'Pacifico', cursive;
+font-size: 3.5rem;
+color: var(--boho-dark-brown);
+margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+font-family: 'Sora', sans-serif;
+font-size: 1.2rem;
+color: var(--boho-dark-brown);
+max-width: 600px;
+margin: 0 auto;
+}
+
+/* Our Story Section */
+.story-card {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: rgba(var(--boho-light-cream), 0.9);
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+padding: 2.5rem;
+margin-bottom: 4rem;
+animation: slide-up 1.2s ease-out;
+}
+
+.story-image {
+max-width: 80%;
+border-radius: 15px;
+margin-bottom: 2rem;
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.story-image img {
+width: 100%;
+height: auto;
+display: block;
+}
+
+.story-text p {
+font-family: 'Sora', sans-serif;
+font-size: 1.1rem;
+color: var(--boho-dark-brown);
+line-height: 1.6;
+max-width: 700px;
+margin: 0 auto 1.5rem;
+}
+
+/* Meet the Team Section */
+.team-title {
+font-family: 'Pacifico', cursive;
+font-size: 2.5rem;
+color: var(--boho-terracotta);
+margin-bottom: 2rem;
+animation: slide-up 1.5s ease-out;
+}
+
+.team-grid {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 2rem;
+}
+
+.team-member-card {
+background-color: rgba(var(--boho-light-cream), 0.85);
+border-radius: 15px;
+padding: 2rem;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+max-width: 300px;
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+text-align: center;
+flex: 1 1 250px;
+animation: scale-up 1.8s ease-out;
+}
+
+.team-member-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.member-photo {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+object-fit: cover;
+border: 3px solid var(--boho-terracotta);
+margin-bottom: 1rem;
+}
+
+.member-name {
+font-family: 'Sora', sans-serif;
+font-size: 1.5rem;
+color: var(--boho-dark-brown);
+margin: 0.5rem 0;
+}
+
+.member-role {
+font-family: 'Sora', sans-serif;
+font-size: 1rem;
+color: var(--boho-terracotta);
+font-weight: bold;
+}
+
+.member-bio {
+font-family: 'Sora', sans-serif;
+font-size: 0.95rem;
+color: rgba(var(--boho-dark-brown), 0.8);
+line-height: 1.5;
+margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fade-in {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes slide-up {
+from { transform: translateY(20px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scale-up {
+from { transform: scale(0.95); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.story-card { flex-direction: column; }
+.story-image { max-width: 100%; }
+.team-grid { flex-direction: column; align-items: center; }
+}

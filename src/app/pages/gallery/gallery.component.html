@@ -1,0 +1,23 @@
+<div class="gallery-container">
+<div class="background-overlay"></div>
+<section class="gallery-section">
+<h2 class="section-title">Gallery</h2>
+<p class="section-subtitle">A collection of our handcrafted bohemian artworks.</p>
+
+<div class="gallery-grid">
+  <div class="gallery-item" *ngFor="let item of galleryItems()">
+    <img [src]="item.img" [alt]="item.title" class="gallery-image" />
+    <div class="image-overlay">
+      <div class="overlay-content">
+        <span class="price-tag">{{ item.price }}</span>
+      </div>
+    </div>
+    <h3 class="artwork-title">{{ item.title }}</h3>
+  </div>
+</div>
+
+</section>
+
+</div>
+
+  <app-footer></app-footer>

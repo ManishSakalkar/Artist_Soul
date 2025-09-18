@@ -12,6 +12,8 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
 import { MostLovedCreationsComponent } from './components/most-loved-creations/most-loved-creations.component';
 import { GetInTouchComponent } from './components/get-in-touch/get-in-touch.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AboutComponent } from './pages/about/about.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { FooterComponent } from './components/footer/footer.component';
     TestimonialsComponent,
     MostLovedCreationsComponent,
     GetInTouchComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

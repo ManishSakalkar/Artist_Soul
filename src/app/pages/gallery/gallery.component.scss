@@ -1,0 +1,162 @@
+/* Google Fonts */
+@import url('https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DSora:wght%40400%3B600%3B700%26family%3DPacifico%26display%3Dswap');
+
+/* Color Variables */
+:host {
+--boho-dark-brown: #3e2f2f;
+--boho-terracotta: #d4a373;
+--boho-light-cream: #fdf6f0;
+--boho-accent-green: #6d8b6f;
+display: block;
+background-color: var(--boho-light-cream);
+font-family: 'Sora', sans-serif;
+padding-top: 0; /* Space for the fixed header */
+}
+
+/* General Layout */
+.gallery-container {
+position: relative;
+min-height: 100vh;
+padding: 4rem 2rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.background-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+margin: 0;
+  background-image: url('../../../assets/art/gallery_bg.jpg');
+background-size: cover;
+background-position: center;
+opacity: 0.15;
+z-index: 1;
+}
+
+/* Typography and Headings */
+.gallery-section {
+position: relative;
+z-index: 2;
+width: 100%;
+max-width: 1200px;
+text-align: center;
+}
+
+.section-title {
+font-family: 'Pacifico', cursive;
+font-size: 3.5rem;
+color: var(--boho-dark-brown);
+margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+font-family: 'Sora', sans-serif;
+font-size: 1.2rem;
+color: var(--boho-dark-brown);
+max-width: 600px;
+margin: 0 auto 3rem;
+}
+
+/* Gallery Grid Layout */
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+grid-auto-rows: minmax(200px, auto);
+grid-auto-flow: dense;
+gap: 1.5rem;
+}
+
+/* Individual Gallery Item */
+.gallery-item {
+position: relative;
+overflow: hidden;
+border-radius: 15px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+cursor: pointer;
+}
+
+.gallery-item:hover {
+transform: translateY(-8px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+.artwork-title {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+padding: 1rem;
+background-color: rgba(var(--boho-dark-brown), 0.7);
+color: var(--boho-light-cream);
+font-family: 'Sora', sans-serif;
+font-size: 1.1rem;
+font-weight: 600;
+margin: 0;
+text-align: center;
+transform: translateY(100%);
+transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover .artwork-title {
+transform: translateY(0);
+}
+
+/* Image Overlay for Price Tag */
+.image-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(var(--boho-terracotta), 0.8);
+display: flex;
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .image-overlay {
+opacity: 1;
+}
+
+.overlay-content {
+text-align: center;
+}
+
+.price-tag {
+background-color: var(--boho-dark-brown);
+color: var(--boho-light-cream);
+font-family: 'Pacifico', cursive;
+font-size: 1.5rem;
+padding: 0.5rem 1.5rem;
+border-radius: 50px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Non-uniform sizing for a more artistic look */
+.gallery-item:nth-child(3n+1) { grid-row: span 2; }
+.gallery-item:nth-child(5n+2) { grid-column: span 2; }
+.gallery-item:nth-child(7n+4) { grid-row: span 3; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.section-title { font-size: 2.5rem; }
+.section-subtitle { font-size: 1rem; }
+.gallery-grid {
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 1rem;
+}
+}
