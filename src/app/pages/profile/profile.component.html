@@ -1,0 +1,107 @@
+<div class="dashboard-container">
+<div class="background-overlay"></div>
+<section>
+<div class="dashboard-header">
+<h1 class="welcome-message">Welcome, {{ userInfo().name }}</h1>
+<p class="section-subtitle">Manage your account, orders, and preferences here.</p>
+</div>
+
+<div class="dashboard-grid">
+  <!-- Account Details -->
+  <div class="info-card account-details">
+    <h2 class="card-title">Account Details</h2>
+    <div class="info-item"><strong>Name:</strong> {{ userInfo().name }}</div>
+    <div class="info-item"><strong>Email:</strong> {{ userInfo().email }}</div>
+    <div class="info-item"><strong>Contact:</strong> {{ userInfo().contact }}</div>
+    <div class="info-item"><strong>Address:</strong> {{ userInfo().address }}</div>
+    <button class="edit-button">Edit Profile</button>
+  </div>
+
+  <!-- Wishlist -->
+  <div class="info-card wishlist">
+    <h2 class="card-title">My Wishlist</h2>
+    <div class="item-grid" *ngIf="wishlistItems().length > 0; else noItems">
+      <div class="item" *ngFor="let item of wishlistItems()">
+        <img [src]="item.img" [alt]="item.name" class="item-img" />
+        <span class="item-name">{{ item.name }}</span>
+      </div>
+    </div>
+    <ng-template #noItems><p class="empty-message">Your wishlist is empty.</p></ng-template>
+  </div>
+
+  <!-- Order History -->
+  <div class="info-card orders">
+    <h2 class="card-title">Order History</h2>
+    <div class="order-list" *ngIf="orderHistory().length > 0; else noOrders">
+      <div class="order-item" *ngFor="let order of orderHistory()">
+        <div class="order-details">
+          <span><strong>Order ID:</strong> {{ order.orderId }}</span>
+          <span><strong>Date:</strong> {{ order.date }}</span>
+          <span><strong>Total:</strong> {{ order.total }}</span>
+        </div>
+        <button class="view-button">View</button>
+      </div>
+    </div>
+    <ng-template #noOrders><p class="empty-message">You have no past orders.</p></ng-template>
+  </div>
+
+  <!-- Recently Viewed -->
+  <div class="info-card recently-viewed">
+    <h2 class="card-title">Recently Viewed</h2>
+    <div class="item-grid" *ngIf="recentlyViewed().length > 0; else noRecent">
+      <div class="item" *ngFor="let item of recentlyViewed()">
+        <img [src]="item.img" [alt]="item.name" class="item-img" />
+        <span class="item-name">{{ item.name }}</span>
+      </div>
+    </div>
+    <ng-template #noRecent><p class="empty-message">No recently viewed items.</p></ng-template>
+  </div>
+
+ <!-- Feedback -->
+<div class="info-card feedback">
+  <h2 class="card-title">Leave Us Feedback</h2>
+  <textarea
+    [value]="feedbackText()"
+    (input)="feedbackText.set($any($event.target).value)"
+    placeholder="Share your thoughts..."
+  ></textarea>
+  <button class="submit-button" (click)="submitFeedback()">Submit Feedback</button>
+</div>
+
+<!-- Actions & Legal -->
+<div class="actions-legal-container">
+  <div class="actions">
+    <button class="logout-button" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Log Out
+    </button>
+    <button class="delete-button" (click)="confirmDeleteAccount()">
+      <i class="fas fa-trash-alt"></i> Delete My Account
+    </button>
+  </div>
+
+  <div class="legal-links">
+    <a href="#" class="legal-link">Terms & Conditions</a>
+    <a href="#" class="legal-link">Privacy Policy</a>
+    <a href="#" class="legal-link">Licenses</a>
+  </div>
+</div>
+
+
+</div>
+
+<!-- Delete Confirmation Modal -->
+
+<div class="modal-overlay" *ngIf="showConfirmation()">
+<div class="modal-card">
+<h3 class="modal-title">Confirm Deletion</h3>
+<p>Are you sure you want to permanently delete your account? This action cannot be undone.</p>
+<div class="modal-buttons">
+<button class="confirm-delete-button" (click)="deleteAccount()">Yes, Delete</button>
+<button class="cancel-button" (click)="cancelDelete()">Cancel</button>
+
+</div>
+</div>
+
+
+</div>
+</section>

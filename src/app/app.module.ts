@@ -15,10 +15,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './pages/about/about.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 
+import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+AppComponent,
     HomeComponent,
     NavbarComponent,
     FeaturedArtCarouselComponent,
@@ -29,11 +31,14 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
     GetInTouchComponent,
     FooterComponent,
     AboutComponent,
-    GalleryComponent
+    GalleryComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+  FormsModule,
+  ProfileComponent // ✅ this enables ngModel binding
   ],
   providers: [],
   bootstrap: [AppComponent]
