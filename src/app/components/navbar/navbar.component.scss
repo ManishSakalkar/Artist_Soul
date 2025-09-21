@@ -197,23 +197,44 @@ $boho-accent-green: #6d8b6f;
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  backdrop-filter: blur(8px);
+ background: none; // removes background colorz-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeInOverlay 0.4s ease-out;
+
+  @keyframes fadeInOverlay {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
+
 .auth-modal {
-  background-color: #c78d5a;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 400px;
+  background-color: #fff8f2;
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 600px;
   text-align: center;
-  animation: fadeInModal 0.4s ease-out;
+  animation: slideUpModal 0.5s ease-out;
+
+  @keyframes slideUpModal {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
   .modal-header {
     display: flex;
@@ -222,7 +243,7 @@ $boho-accent-green: #6d8b6f;
     margin-bottom: 1rem;
 
     h2 {
-      font-size: 1.8rem;
+      font-size: 2.4rem;
       font-family: 'Pacifico', cursive;
       color: #3e2f2f;
       margin: 0;
@@ -231,7 +252,7 @@ $boho-accent-green: #6d8b6f;
     .close-modal {
       background: none;
       border: none;
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: #3e2f2f;
       cursor: pointer;
       transition: transform 0.3s ease, color 0.3s ease;
@@ -243,40 +264,107 @@ $boho-accent-green: #6d8b6f;
     }
   }
 
+  .modal-subtitle {
+    font-size: 1.1rem;
+    color: #5c3d2e;
+    margin-bottom: 2rem;
+    font-family: 'Sora', sans-serif;
+  }
+
   input {
     display: block;
     width: 100%;
-    margin: 0.5rem 0;
-    padding: 0.8rem;
-    border-radius: 12px;
+    margin: 0.75rem 0;
+    padding: 1rem;
+    border-radius: 14px;
     border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fdf6f0;
+    transition: box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #d4a373;
+      box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.3);
+    }
+  }
+
+  .error-message {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin: 1rem 0;
   }
 
   .auth-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 
     button {
       flex: 1;
       margin: 0 0.5rem;
-      padding: 0.6rem 1rem;
+      padding: 0.8rem 1.4rem;
       border-radius: 30px;
-      background-color: #512e0b;
+      background-color: #d4a373;
       color: white;
+      font-weight: bold;
+      font-size: 1rem;
       border: none;
       cursor: pointer;
+      transition: background-color 0.3s ease;
 
       &:hover {
         background-color: #3e2f2f;
       }
     }
   }
+  
+  @media (max-width: 768px) {
+  .auth-modal {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  .modal-header h2 {
+    font-size: 2rem;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+
+    button {
+      margin: 0.5rem 0;
+    }
+  }
+}
+
 }
 
 .welcome-message {
-  font-size: 0.9rem;
-  color: #3e2f2f;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2rem;
+  color: #fbeaea;
   text-align: right;
   margin-top: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(212, 163, 115, 0.6);
+  animation: fadeSlideIn 0.8s ease-out;
+  transform: translateY(0);
+  transition: transform 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    color: #d4a373;
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

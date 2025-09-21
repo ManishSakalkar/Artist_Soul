@@ -24,7 +24,7 @@
 
   <ng-template #loggedInBlock>
     <button class="btn logout-btn" (click)="logout()">Logout</button>
-    <div class="welcome-message">Welcome,<br />{{ userName }}</div>
+ <div class="welcome-message">✨ Welcome,<br />{{ userName }}</div>
   </ng-template>
 
   <a routerLink="/cart" class="cart-btn">
@@ -34,23 +34,31 @@
     </div>
   </a>
 </div>
-
-  <div class="auth-modal-overlay" *ngIf="showAuthModal">
+<!-- \Auth Model -->
+<div class="auth-modal-overlay" *ngIf="showAuthModal">
   <div class="auth-modal">
-
     <div class="modal-header">
-    <h2>Login or Sign Up</h2>
-    <button class="close-modal" (click)="closeAuthModal()">x</button>
-  </div>
-    <input type="text" placeholder="Your Name" #nameInput />
-    <input type="email" placeholder="Email" />
-    <input type="password" placeholder="Password" />
-    <div class="auth-buttons">
-      <button (click)="handleLoginSuccess(nameInput.value)">Login</button>
-      <button (click)="handleLoginSuccess(nameInput.value)">Sign Up</button>
+      <h2>Welcome to Artistic Soul</h2>
+      <button class="close-modal" (click)="closeAuthModal()">×</button>
     </div>
+
+    <p class="modal-subtitle">Log in to explore soulful creations</p>
+
+    <form (ngSubmit)="handleLogin(nameInput.value, emailInput.value, passwordInput.value)">
+      <input type="text" placeholder="Your Name" #nameInput required />
+      <input type="email" placeholder="Email" #emailInput required />
+      <input type="password" placeholder="Password" #passwordInput required />
+
+      <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <div class="auth-buttons">
+        <button type="submit">Login</button>
+        <button type="button" (click)="handleLogin(nameInput.value, emailInput.value, passwordInput.value)">Sign Up</button>
+      </div>
+    </form>
   </div>
 </div>
+
 
   
   

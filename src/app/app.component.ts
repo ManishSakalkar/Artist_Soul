@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'artist_soul';
+  openChatBot(): void {
+  alert('ChatBot coming soon!'); // Replace with real chatbot modal or integration
+}
+
 }

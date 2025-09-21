@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Sora:wght@400;600;700&display=swap');
+
+$boho-dark-brown: #3e2f2f;
+$boho-terracotta: #d4a373;
+$boho-light-cream: #fdf6f0;
+$boho-accent-green: #6d8b6f;
+
+.login-page {
+  height: 100vh;
+  background: linear-gradient(to right, $boho-light-cream, #f3bd8d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Sora', sans-serif;
+  padding: 2rem;
+}
+
+.login-card {
+  background-color: #fff8f2;
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+
+  h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: $boho-dark-brown;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: #5c3d2e;
+    margin-bottom: 2rem;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    margin: 0.75rem 0;
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: $boho-light-cream;
+
+    &:focus {
+      outline: none;
+      border-color: $boho-terracotta;
+      box-shadow: 0 0 0 2px rgba($boho-terracotta, 0.3);
+    }
+  }
+
+  .error {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+
+  button {
+    background-color: $boho-terracotta;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $boho-dark-brown;
+    }
+  }
+
+  .signup-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+
+    a {
+      color: $boho-dark-brown;
+      text-decoration: underline;
+
+      &:hover {
+        color: $boho-terracotta;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

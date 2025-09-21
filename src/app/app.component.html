@@ -1,2 +1,19 @@
 <app-navbar></app-navbar>
+<!-- Floating ChatBot & WhatsApp Buttons -->
+<div class="floating-buttons">
+  <!-- ChatBot Button -->
+  <button class="chatbot-btn" (click)="openChatBot()">
+    <i class="fas fa-robot"></i>
+  </button>
+
+  <!-- WhatsApp Button -->
+  <a
+    href="https://wa.me/918308181847?text=Hi%20Artistic%20Soul%2C%20I%20have%20a%20question%20about%20your%20artwork"
+    target="_blank"
+    class="whatsapp-btn"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
 <router-outlet></router-outlet>
