@@ -17,6 +17,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 
 import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ AppComponent,
     FooterComponent,
     AboutComponent,
     GalleryComponent,
+    ContactComponent,
     
   ],
   imports: [

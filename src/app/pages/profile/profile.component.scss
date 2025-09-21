@@ -11,7 +11,7 @@
 display: block;
 background-color: var(--boho-light-cream);
 font-family: 'Sora', sans-serif;
-padding-top: 6rem;
+padding-top: 0;
 }
 
 /* General Layout */
@@ -30,11 +30,12 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background-image: url('https://www.google.com/search?q=https://placehold.co/1920x1080/b58863/3e2f2f%3Ftext%3DDashboard%2BBackground');
+background-image: url('../../../assets/art/profile.jpg');
 background-size: cover;
 background-position: center;
 opacity: 0.1;
 z-index: 1;
+margin: 0;
 }
 
 .dashboard-section {
