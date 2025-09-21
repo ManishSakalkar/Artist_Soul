@@ -18,13 +18,41 @@
     </ul>
 
     <div class="nav-right">
-      <a routerLink="/login" class="btn login-btn">Login</a>
-      <a routerLink="/cart" class="cart-btn">
-        <div class="cart-icon-wrapper">
-          <i data-feather="shopping-cart"></i>
-          <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span>
-        </div>
-      </a>
+  <ng-container *ngIf="!isLoggedIn; else loggedInBlock">
+    <button class="btn login-btn" (click)="openAuthModal()">Login</button>
+  </ng-container>
+
+  <ng-template #loggedInBlock>
+    <button class="btn logout-btn" (click)="logout()">Logout</button>
+    <div class="welcome-message">Welcome,<br />{{ userName }}</div>
+  </ng-template>
+
+  <a routerLink="/cart" class="cart-btn">
+    <div class="cart-icon-wrapper">
+      <i data-feather="shopping-cart"></i>
+      <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span>
     </div>
+  </a>
+</div>
+
+  <div class="auth-modal-overlay" *ngIf="showAuthModal">
+  <div class="auth-modal">
+
+    <div class="modal-header">
+    <h2>Login or Sign Up</h2>
+    <button class="close-modal" (click)="closeAuthModal()">x</button>
+  </div>
+    <input type="text" placeholder="Your Name" #nameInput />
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <div class="auth-buttons">
+      <button (click)="handleLoginSuccess(nameInput.value)">Login</button>
+      <button (click)="handleLoginSuccess(nameInput.value)">Sign Up</button>
+    </div>
+  </div>
+</div>
+
+  
+  
   </div>
 </nav>

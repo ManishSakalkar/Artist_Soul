@@ -9,43 +9,43 @@ export class TestimonialsComponent {
  testimonials = [
     {
       quote: "I absolutely love my new canvas art! It perfectly complements my living room and adds so much warmth. The quality is exceptional.",
-      name: "Sarah J.",
-      location: "New York, NY"
+      name: "Aarushi Mehta",
+      location: "Jaipur, Rajasthan"
     },
     {
       quote: "The Liipan art I ordered is stunning. The craftsmanship is incredible and the colors are even more vibrant in person. Highly recommend!",
-      name: "Mark T.",
-      location: "Los Angeles, CA"
+      name: "Rohan Deshmukh",
+      location: "Pune, Maharashtra"
     },
     {
       quote: "This artist has an amazing talent! The custom sketching piece she created for me was a wonderful gift. Thank you!",
-      name: "Jessica P.",
-      location: "Austin, TX"
+      name: "Neha Kapoor",
+      location: "Delhi"
     },
     {
-      quote: "This artist has an amazing talent! The custom sketching piece she created for me was a wonderful gift. Thank you!",
-      name: "Jessica P.",
-      location: "Austin, TX"
+      quote: "I’ve never seen such intricate detailing in Liipan art. It brings warmth and tradition to my modern space beautifully.",
+      name: "Kunal Joshi",
+      location: "Ahmedabad, Gujarat"
     },
     {
-      quote: "This artist has an amazing talent! The custom sketching piece she created for me was a wonderful gift. Thank you!",
-      name: "Jessica P.",
-      location: "Austin, TX"
+      quote: "Absolutely loved the Wildflower Canvas! It’s vibrant, calming, and feels like a window into nature.",
+      name: "Meera Iyer",
+      location: "Bengaluru, Karnataka"
     },
     {
-      quote: "This artist has an amazing talent! The custom sketching piece she created for me was a wonderful gift. Thank you!",
-      name: "Jessica P.",
-      location: "Austin, TX"
+      quote: "The sketching work is phenomenal. It captured my pet’s personality so well—I’ll treasure it forever.",
+      name: "Ananya Rao",
+      location: "Hyderabad, Telangana"
     },
     {
-      quote: "This artist has an amazing talent! The custom sketching piece she created for me was a wonderful gift. Thank you!",
-      name: "Jessica P.",
-      location: "Austin, TX"
+      quote: "I ordered a custom mandala and it exceeded my expectations. The symmetry and energy are just perfect.",
+      name: "Dev Sharma",
+      location: "Chandigarh"
     },
-    {
-      quote: "This artist has an amazing talent! The custom sketching piece she created for me was a wonderful gift. Thank you!",
-      name: "Jessica P.",
-      location: "Austin, TX"
+     {
+      quote: "The earthy tones and textures in the Liipan piece I received are so grounding. It’s more than art—it’s emotion.",
+      name: "Simran Kaur",
+      location: "Amritsar, Punjab"
     }
   ];
 

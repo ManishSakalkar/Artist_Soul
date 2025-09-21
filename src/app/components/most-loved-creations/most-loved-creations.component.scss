@@ -1,61 +1,117 @@
 .most-loved-creations {
   text-align: center;
-  padding: 2rem 1rem;
-  background-color: #facfbf;
+  padding: 4rem 2rem;
   background: linear-gradient(to left, #fdf6f0, #f3bd8d);
-border: 2px solid #d4a373; // boho accent color
-  border-radius: 16px; // smooth rounded corners
-//   background-color: #fff; /* A very light, inviting background */
+  border: 2px solid #d4a373;
+  border-radius: 16px;
+
+  h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    color: #3e2f2f;
+    margin-bottom: 2rem;
+  }
 }
 
 .art-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr); // exactly 5 per row
+  column-gap: 1rem;
+  row-gap: 2rem;
   justify-items: center;
+  padding: 0;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
+
 .art-card {
+  width: 100%;
+  max-width: 220px; // ensures 5 cards fit in one row
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #ffffff;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  border: 1px solid #e0d8c7; /* Subtle border */
+  border: 1px solid #e0d8c7;
 }
 
-.art-card:hover {
-  transform: translateY(-5px);
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.art-image {
-  width: 100%;
-  height: 300px;
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  .art-image {
+     width: 100%;
+  height: 180px;
   object-fit: cover;
+  display: block;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
 
 .card-content {
-  padding: 1.5rem;
-  text-align: left;
-}
+  padding: 1rem;
+  text-align: center;
 
-.art-price {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #d4a373; /* Boho accent color */
-  margin: 0.5rem 0;
-}
+  h3 {
+    font-size: 1.4rem;
+    color: #3e2f2f;
+    margin-bottom: 0.5rem;
+  }
 
-.add-to-cart-button {
-  background-color: #5c4b51;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+  .art-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d4a373;
+    margin-bottom: 1rem;
+  }
 
-.add-to-cart-button:hover {
-  background-color: #796871;
+  .add-to-cart-button {
+   padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    background-color: #5c4b51;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #796871;
+    }
+  }
 }

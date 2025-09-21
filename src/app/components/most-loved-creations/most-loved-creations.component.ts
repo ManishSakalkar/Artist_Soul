@@ -8,24 +8,35 @@ import { Component } from '@angular/core';
 export class MostLovedCreationsComponent {
 mostLovedCreations = [
     {
-      title: "Desert Sunset Sketch",
-      price: 45.00,
-      image: "assets/art-desert-sunset.jpg"
+      title: 'Lippan Art',
+      description: 'Discover the beauty of handmade creations that speak to your soul.',
+      image: 'assets/art/MostLovedArt/lippanArt1.jpg',
+      price: 85.0
     },
     {
-      title: "Boho Mandala Liipan",
-      price: 85.00,
-      image: "assets/art-boho-mandala.jpg"
+      title: 'Mandala Liipan',
+      image: 'assets/art/MostLovedArt/BohoMandalaLiipan.jpg',
+      price: 85.0
     },
     {
-      title: "Wildflower Canvas",
-      price: 120.00,
-      image: "assets/art-wildflower.jpg"
+      title: 'Canvas Art',
+      image: 'assets/art/MostLovedArt/WildflowerCanvas.jpg',
+      price: 120.0
+    },
+    {
+      title: 'Terracotta Bloom',
+      image: 'assets/art/MostLovedArt/TerracottaBloom.jpg',
+      price: 95.0
+    },
+    {
+      title: 'Sunset Sketch',
+      image: 'assets/art/MostLovedArt/SunsetSketch.jpg',
+      price: 70.0
+    },
+    {
+      title: 'Mirror Mosaic Mandala',
+      image: 'assets/art/MostLovedArt/MirrorMosaicMandala.jpg',
+      price: 110.0
     }
   ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 }

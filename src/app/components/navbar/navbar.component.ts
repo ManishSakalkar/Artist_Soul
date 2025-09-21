@@ -20,5 +20,29 @@ export class NavbarComponent implements AfterViewInit{
     feather.replace();
   }
 
+ isLoggedIn = false;
+  showAuthModal = false;
+  userName = '';
+
+
+  openAuthModal(): void {
+    this.showAuthModal = true;
+  }
+
+  closeAuthModal(): void {
+    this.showAuthModal = false;
+  }
+
+  handleLoginSuccess(name: string): void {
+    this.userName = name;
+    this.isLoggedIn = true;
+    this.closeAuthModal();
+  }
+
+  logout(): void {
+    this.isLoggedIn = false;
+    this.userName = '';
+  }
+
 
 }

@@ -10,19 +10,19 @@ export class FeaturedArtCarouselComponent {
 
   featuredArt = [
     {
-      title: 'Handcrafted Art for',
-      description: 'Discover the beauty of handmade creations that speak to your soul.',
-      image: 'assets/art/sketching.jpg'
-    },
-    {
       title: 'Lippan Art',
       description: 'Traditional mirror work from Gujarat with earthy textures.',
-      image: 'assets/art/lippan.jpg'
+      image: 'assets/art/Carousel/lippanArt2.jpg'
+    },
+    {
+      title: 'Handcrafted Art for',
+      description: 'Discover the beauty of handmade creations that speak to your soul.',
+      image: 'assets/art/Carousel/featuredArt1.jpg'
     },
     {
       title: 'Color Art',
       description: 'Vibrant color compositions that energize any space.',
-      image: 'assets/art/color.jpg'
+      image: 'assets/art/Carousel/ColorArt3.jpg'
     }
   ];
 

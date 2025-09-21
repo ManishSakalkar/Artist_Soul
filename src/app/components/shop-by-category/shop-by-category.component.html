@@ -1,17 +1,27 @@
 <section class="shop-by-category">
-  <h2>Shop by Category</h2>
-  <div class="category-grid">
-    <div class="category-card" [routerLink]="['/category', 'canvas']">
-      <img src="assets/category-canvas.jpg" alt="Canvas Art" class="category-image">
-      <p class="category-title">Canvas Art</p>
-    </div>
-    <div class="category-card" [routerLink]="['/category', 'liipan']">
-      <img src="assets/category-liipan.jpg" alt="Liipan Art" class="category-image">
-      <p class="category-title">Liipan Art</p>
-    </div>
-    <div class="category-card" [routerLink]="['/category', 'sketching']">
-      <img src="assets/category-sketching.jpg" alt="Sketching Art" class="category-image">
-      <p class="category-title">Sketching</p>
-    </div>
-  </div>
+<div class="boho-header">
+<h2 class="title">{{ sectionTitle }}</h2>
+<p class="slogan">{{ sectionSlogan }}</p>
+</div>
+
+<div class="category-grid">
+<div
+class="category-card"
+*ngFor="let category of categories()"
+>
+<div class="card-image-container">
+<img [src]="category.image" [alt]="category.name" class="category-image" />
+</div>
+<div class="card-content">
+<h3 class="category-title">{{ category.name }}</h3>
+<p class="category-slogan">{{ category.slogan }}</p>
+<div class="card-footer">
+<span class="customization-label">Handcrafted & Customizable</span>
+<a href="#" class="view-button">
+View Pieces
+</a>
+</div>
+</div>
+</div>
+</div>
 </section>
