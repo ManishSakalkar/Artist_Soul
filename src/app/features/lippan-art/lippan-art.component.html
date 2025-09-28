@@ -1,0 +1,25 @@
+<div class="lippan-container">
+  <h2>Soulful Spaces – Lippan Art Collection</h2>
+  <p>
+  Traditional mirror work from Gujarat with earthy textures. <br />
+  <strong>Customization Available</strong> | <em>Prices are negotiable</em>
+</p>
+<div class="highlight-note">
+  <strong>Note:</strong> Custom Lippan Art orders are available on request. Please allow <span class="highlight-days">10–12 days</span> for preparation and finishing.
+</div>
+
+  <div class="art-grid">
+    <div class="art-card" *ngFor="let item of artCollection">
+      <img [src]="item.image" [alt]="item.name" />
+      <h3>{{ item.name }}</h3>
+      <p class="price">₹{{ item.price }}</p>
+      <a
+        class="btn whatsapp-btn"
+        [href]="generateWhatsAppLink(item)"
+        target="_blank"
+      >
+        Buy via WhatsApp
+      </a>
+    </div>
+  </div>
+</div>

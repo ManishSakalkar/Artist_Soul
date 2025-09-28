@@ -6,60 +6,60 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent {
-galleryItems = signal([
+galleryItems = [
     {
-      img: 'https://placehold.co/800x600/b0c4de/3e2f2f?text=Piece+One',
-      title: 'Desert Sun',
-      price: '$120.00',
+      img: 'assets/art/Gallery/gallery2.jpg',
+      title: 'Boottle Art',
+      price: '1200 Rs',
       tags: ['featured', 'most-loved']
     },
     {
-      img: 'https://placehold.co/600x800/f0e68c/3e2f2f?text=Piece+Two',
-      title: 'Terracotta Dreams',
-      price: '$180.00',
+      img: 'assets/art/Gallery/gallery1.jpg',
+      title: 'Traditional Lippan Art',
+      price: '2999 Rs',
       tags: ['featured']
     },
     {
-      img: 'https://placehold.co/600x600/d2b48c/3e2f2f?text=Piece+Three',
-      title: 'Woven Spirit',
-      price: '$95.00',
+      img: 'assets/art/Gallery/gallery3.jpg',
+      title: 'Evil Eye',
+      price: '1999 Rs',
       tags: ['favourite']
     },
     {
-      img: 'https://placehold.co/800x1200/6d8b6f/3e2f2f?text=Piece+Four',
-      title: 'Forest Whisper',
-      price: '$250.00',
+      img: 'assets/art/Gallery/gallery4.jpg',
+      title: 'Madala Lippan Art',
+      price: '1999 Rs',
       tags: ['most-loved']
     },
     {
-      img: 'https://placehold.co/600x400/8fbc8f/3e2f2f?text=Piece+Five',
-      title: 'Green Oasis',
-      price: '$75.00',
+      img: 'assets/art/Gallery/gallery5.jpg',
+      title: 'Zaroka Frames',
+      price: '999 Rs',
       tags: []
     },
     {
-      img: 'https://placehold.co/800x800/d4a373/3e2f2f?text=Piece+Six',
-      title: 'Boho Bloom',
-      price: '$150.00',
+      img: 'assets/art/Gallery/gallery6.jpg',
+      title: 'Peackock Lippan Art',
+      price: '2499 Rs',
       tags: ['featured', 'favourite']
     },
     {
-      img: 'https://placehold.co/400x500/a5694f/fdf6f0?text=Bohemian+Abstract',
-      title: 'Echoes of the Canyon',
-      price: '$190.00',
+      img: 'assets/art/Gallery/gallery7.jpg',
+      title: 'Home Decore Art',
+      price: '2999 Rs',
       tags: []
     },
     {
-      img: 'https://placehold.co/500x700/f8c471/3e2f2f?text=Earthy+Vibes',
-      title: 'Sun-kissed Clay',
-      price: '$210.00',
+      img: 'assets/art/Gallery/gallery8.jpg',
+      title: 'Name Plates',
+      price: '1999 Rs',
       tags: ['most-loved']
     },
     {
-      img: 'https://placehold.co/700x500/8c8d5f/fdf6f0?text=Natural+Patterns',
-      title: 'Verdant Meadow',
-      price: '$135.00',
+      img: 'assets/art/Gallery/gallery9.jpg',
+      title: 'Traditional Art Frame',
+      price: '3599 Rs',
       tags: ['favourite']
     }
-  ]);
+  ];
 }

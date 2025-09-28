@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LippanArtComponent } from './features/lippan-art/lippan-art.component';
+import { LearnMoreComponent } from './features/learn-more/learn-more.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ AppComponent,
     GalleryComponent,
     ContactComponent,
     LoginComponent,
+    LippanArtComponent,
+    LearnMoreComponent,
     
   ],
   imports: [

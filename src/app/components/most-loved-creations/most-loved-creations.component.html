@@ -11,8 +11,14 @@
       </div>
       <div class="card-content">
         <h3>{{ creation.title }}</h3>
-        <p class="art-price">{{ creation.price | currency: 'USD':'symbol' }}</p>
-        <button class="add-to-cart-button">Add to Cart</button>
+        <p class="art-price">{{ creation.price | currency: 'Rs ':'symbol' }}</p>
+        <a
+  class="buy-whatsapp-button"
+  [href]="generateWhatsAppLink(creation)"
+  target="_blank"
+>
+  Buy via WhatsApp
+</a>
       </div>
     </div>
   </div>

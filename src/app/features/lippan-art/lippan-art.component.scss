@@ -1,0 +1,134 @@
+.lippan-container {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+//   background: url('../../../assets/lippan-bg-texture.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  z-index: 1;
+    
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../../assets/lippan-bg-texture.jpg') center/cover no-repeat;
+    opacity: 0.10; // Adjust this value for subtlety
+    z-index: -1;
+  }
+  h2 {
+    font-size: 2.5rem;
+    color: #3e2f2f;
+    margin-bottom: 0.5rem;
+    font-family: 'Pacifico', cursive;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #6b4c4c;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .art-grid {
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    .art-card {
+        height: 650px;
+      background: linear-gradient(to bottom right, #fdf6f0, #e6d3c9);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 100px;
+        height: 100px;
+        background: url('../../../assets/mirror-flower.jpg') center/contain no-repeat;
+        opacity: 0.2;
+        transform: rotate(25deg);
+      }
+
+      img {
+        width: 100%;
+        height: 500px; 
+        border-radius: 10px;
+        margin-bottom: 0.75rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        color: #d4a373;
+        margin-bottom: 0.25rem;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #3e2f2f;
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+      }
+
+      .whatsapp-btn {
+        display: inline-block;
+        background-color: #25d366;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          background-color: #128c7e;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .highlight-note {
+  background-color: #fff4e6;
+  border-left: 5px solid #d4a373;
+  padding: 1rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 600px;
+  font-size: 1rem;
+  color: #3e2f2f;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  strong {
+    color: #a0522d;
+  }
+
+  .highlight-days {
+    font-weight: bold;
+    color: #b94e48;
+  }
+}
+
+}
